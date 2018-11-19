@@ -1,0 +1,32 @@
+doctype html
+html
+  head
+    title NodeAuth Project
+    //bootstarp4 css
+    link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+    //custom css
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body.bg-light
+    .container-fluid.p-0
+      nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
+        a.navbar-brand(href='http://localhost:3000/') NodeAuth
+        button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
+          span.navbar-toggler-icon
+        #navbarSupportedContent.collapse.navbar-collapse
+          ul.navbar-nav.mr-auto
+            li.nav-item(class=(title == 'Members' ? 'active':''))
+              a.nav-link(href='/')
+                | Members
+                span.sr-only (current)
+            li.nav-item(class=(title == 'Register' ? 'active':''))
+              a.nav-link(href='/users/register') Register
+            li.nav-item(class=(title == 'Login' ? 'active':''))
+              a.nav-link(href='/users/login') Login
+          div.nav-item.ml-auto
+            a.text-danger.nav-link(href='/users/logout') Logout
+    main.container
+
+      block content
+      script(src="/javascripts/jquery-3.3.1.min.js")
+      script(src="/javascripts/bootstrap.min.js")
+    footer
